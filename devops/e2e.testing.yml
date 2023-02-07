@@ -4,14 +4,14 @@ steps:
     inputs:
       versionSpec: 12.x
     
-  - task: Cache@2
-    displayName: 'Cache npm'
-    inputs:
-      key: 'npm | "$(Agent.OS)" | package-lock.json'
-      restoreKeys: |
-        npm | "$(Agent.OS)"
-        npm
-      path: $(npm_config_cache)
+  # - task: Cache@2
+  #   displayName: 'Cache npm'
+  #   inputs:
+  #     key: 'npm | "$(Agent.OS)" | package-lock.json'
+  #     restoreKeys: |
+  #       npm | "$(Agent.OS)"
+  #       npm
+  #     path: $(npm_config_cache)
     
   # Caching Cypress is at the moment still slower than not caching it. Uncomment just in case you want to test it out.
   # - task: Cache@2
@@ -58,7 +58,7 @@ steps:
       TERM: xterm # Avoid terminal warnings
       VERBOSE: $(verbose)
       BUILDID: $(Build.BuildId)
-      CYPRESS_RECORD_KEY: $(cypress_record_key)
+      
   
   - task: PublishTestResults@2
     displayName: 'Publish the test reports'
