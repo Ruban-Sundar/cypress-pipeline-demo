@@ -46,37 +46,37 @@ stages:
 - stage: e2e_testing_stage_chrome_ubuntu
   displayName: 'Ubuntu Chrome E2E Testing'
   jobs:
-  - job: e2e_testing_job_chrome
+  - job: e2e_testing_job_chrome_ubuntu
     displayName: 'Run E2E in Chrome'
     pool:
-      vmImage: linux-latest
+      vmImage: ubuntu-latest
     steps:
       - template: devops/e2e.testing.yml
         parameters:
           browserType: chrome
           
-- stage: e2e_testing_stage_edge_ubuntu
-  displayName: 'Edge E2E Testing Ubuntu'
+- stage: e2e_testing_stage_electron_ubuntu
+  displayName: 'Electron E2E Testing Ubuntu'
   dependsOn: e2e_testing_stage_chrome_ubuntu
   jobs:  
-  - job: e2e_testing_job_edge
-    displayName: 'Run E2E in Edge'
+  - job: e2e_testing_job_electron_ubuntu
+    displayName: 'Run E2E in Electron'
     pool:
-      vmImage: linux-latest
+      vmImage: ubuntu-latest
     steps:
       - template: devops/e2e.testing.yml
         parameters:
-          browserType: edge
+          browserType: electron
 
-- stage: e2e_testing_stage_firefox_ubuntu
-  displayName: 'Firefox E2E Testing Ubuntu'
+- stage: e2e_testing_stage_chromium_ubuntu
+  displayName: 'Chromium E2E Testing Ubuntu'
   dependsOn: e2e_testing_stage_chrome_ubuntu
   jobs:
-  - job: e2e_testing_job_firefox
+  - job: e2e_testing_job_chromium_ubuntu
     displayName: 'Run E2E in Firefox'
     pool:
-      vmImage: linux-latest
+      vmImage: ubuntu-latest
     steps:
       - template: devops/e2e.testing.yml
         parameters:
-          browserType: chrome          
+          browserType: chromium         
