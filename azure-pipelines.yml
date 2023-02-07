@@ -18,7 +18,7 @@ stages:
           
 - stage: e2e_testing_stage_edge
   displayName: 'Edge E2E Testing'
-  dependsOn: []
+  dependsOn: e2e_testing_stage_chrome
   jobs:  
   - job: e2e_testing_job_edge
     displayName: 'Run E2E in Edge'
@@ -31,7 +31,7 @@ stages:
 
 - stage: e2e_testing_stage_firefox
   displayName: 'Firefox E2E Testing'
-  dependsOn: []
+  dependsOn: e2e_testing_stage_edge
   jobs:
   - job: e2e_testing_job_firefox
     displayName: 'Run E2E in Firefox'
