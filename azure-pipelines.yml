@@ -55,7 +55,7 @@ stages:
         parameters:
           browserType: chrome
           
-- stage: e2e_testing_stage_edge
+- stage: e2e_testing_stage_edge_ubuntu
   displayName: 'Edge E2E Testing Ubuntu'
   dependsOn: e2e_testing_stage_chrome_ubuntu
   jobs:  
@@ -68,7 +68,7 @@ stages:
         parameters:
           browserType: edge
 
-- stage: e2e_testing_stage_firefox
+- stage: e2e_testing_stage_firefox_ubuntu
   displayName: 'Firefox E2E Testing Ubuntu'
   dependsOn: e2e_testing_stage_chrome_ubuntu
   jobs:
