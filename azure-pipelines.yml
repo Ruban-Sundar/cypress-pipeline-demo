@@ -29,18 +29,18 @@ stages:
         parameters:
           browserType: edge
 
-- stage: e2e_testing_stage_firefox
-  displayName: 'Firefox E2E Testing'
+- stage: e2e_testing_stage_safari
+  displayName: 'Safari E2E Testing'
   dependsOn: e2e_testing_stage_edge
   jobs:
   - job: e2e_testing_job_firefox
-    displayName: 'Run E2E in Firefox'
+    displayName: 'Run E2E in Safari'
     pool:
       vmImage: macos-latest
     steps:
       - template: devops/e2e.testing.yml
         parameters:
-          browserType: firefox
+          browserType: safari
           
 #### Ubuntu OS
 - stage: e2e_testing_stage_chrome_ubuntu
