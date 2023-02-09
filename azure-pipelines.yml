@@ -49,7 +49,7 @@ stages:
   - job: e2e_testing_job_chrome_ubuntu
     displayName: 'Run E2E in Chrome'
     pool:
-      vmImage: ubuntu-latest
+      vmImage: linux-latest
     steps:
       - template: devops/e2e.testing.yml
         parameters:
@@ -62,7 +62,7 @@ stages:
   - job: e2e_testing_job_electron_ubuntu
     displayName: 'Run E2E in Electron'
     pool:
-      vmImage: ubuntu-latest
+      vmImage: linux-latest
     steps:
       - template: devops/e2e.testing.yml
         parameters:
@@ -75,8 +75,8 @@ stages:
   - job: e2e_testing_job_chromium_ubuntu
     displayName: 'Run E2E in Firefox'
     pool:
-      vmImage: ubuntu-latest
+      vmImage: linux-latest
     steps:
       - template: devops/e2e.testing.yml
         parameters:
-          browserType: chromium         
+          browserType: edge         
