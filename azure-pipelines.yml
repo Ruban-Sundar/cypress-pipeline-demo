@@ -29,12 +29,12 @@ stages:
         parameters:
           browserType: edge
 
-- stage: e2e_testing_stage_firefox
-  displayName: 'Firefox E2E Testing'
+- stage: e2e_testing_stage_electron
+  displayName: 'Electron E2E Testing'
   dependsOn: e2e_testing_stage_edge
   jobs:
-  - job: e2e_testing_job_firefox
-    displayName: 'Run E2E in Firefox'
+  - job: e2e_testing_job_electron
+    displayName: 'Run E2E in Electron'
     pool:
       vmImage: macos-latest
     steps:
