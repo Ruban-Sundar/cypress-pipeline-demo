@@ -40,7 +40,7 @@ stages:
     steps:
       - template: devops/e2e.testing.yml
         parameters:
-          browserType: chrome
+          browserType: electron
           
 #### Ubuntu OS
 - stage: e2e_testing_stage_chrome_ubuntu
